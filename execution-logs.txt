@@ -1,0 +1,162 @@
+TASK 3 - INFRASTRUCTURE AS CODE WITH TERRAFORM
+================================================
+
+Objective:
+Provision a local Docker container using Terraform.
+
+Tools:
+- Terraform
+- Docker
+- Docker Provider
+- Nginx
+
+------------------------------------------------
+1. Docker Verification
+------------------------------------------------
+
+Command:
+docker --version
+
+Command:
+docker ps
+
+Docker was verified successfully.
+
+------------------------------------------------
+2. Terraform Verification
+------------------------------------------------
+
+Command:
+terraform version
+
+Terraform was installed and available successfully.
+
+------------------------------------------------
+3. Terraform Formatting
+------------------------------------------------
+
+Command:
+terraform fmt
+
+Terraform configuration was formatted successfully.
+
+------------------------------------------------
+4. Terraform Validation
+------------------------------------------------
+
+Command:
+terraform validate
+
+Result:
+Success! The configuration is valid.
+
+------------------------------------------------
+5. Terraform Initialization
+------------------------------------------------
+
+Command:
+terraform init
+
+Result:
+Terraform initialized successfully and the Docker provider was installed.
+
+------------------------------------------------
+6. Terraform Plan
+------------------------------------------------
+
+Command:
+terraform plan
+
+Result:
+Terraform generated an execution plan for the Docker image and
+Docker container.
+
+------------------------------------------------
+7. Terraform Apply
+------------------------------------------------
+
+Command:
+terraform apply
+
+Result:
+Apply completed successfully.
+
+The Docker container was created:
+
+Container:
+terraform-nginx
+
+Docker image:
+nginx:latest
+
+Port mapping:
+Host port 8900 -> Container port 80
+
+------------------------------------------------
+8. Docker Verification
+------------------------------------------------
+
+Command:
+docker ps
+
+Result:
+The terraform-nginx container was running successfully.
+
+------------------------------------------------
+9. Application Verification
+------------------------------------------------
+
+Command:
+curl http://localhost:8900
+
+Result:
+The Nginx web server responded successfully.
+
+------------------------------------------------
+10. Terraform State
+------------------------------------------------
+
+Command:
+terraform state list
+
+Result:
+docker_container.nginx
+docker_image.nginx
+
+------------------------------------------------
+11. Terraform Show
+------------------------------------------------
+
+Command:
+terraform show
+
+Result:
+Terraform state confirmed the Docker image and container configuration.
+
+------------------------------------------------
+12. Terraform Plan After Deployment
+------------------------------------------------
+
+Command:
+terraform plan
+
+Result:
+No changes were required because the actual infrastructure matched
+the Terraform configuration.
+
+------------------------------------------------
+13. Terraform Destroy
+------------------------------------------------
+
+Command:
+terraform destroy
+
+Result:
+Terraform successfully destroyed the infrastructure.
+
+------------------------------------------------
+Conclusion
+------------------------------------------------
+
+The task demonstrated Infrastructure as Code using Terraform to
+provision and manage a local Docker Nginx container.
